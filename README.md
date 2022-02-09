@@ -3,11 +3,78 @@
 * NEU ID: 002192922
 
 #### Assumption
-在连续几行的文本开头加入1个Tab或者4个空格。
+##### Usage:
+There are two ways to create B-tree.
+```
+Btree tree = new Btree(); // create a b-tree with the default nodesize 5(Store up to 5 child pointers and 4 data pointers)
+Btree tree = new Btree(4);// create a b-tree with nodesize 4
+```
+Insert
+```
+tree.Insert(5);
+tree.Insert(10);
+```
+Query
+```
+tree.Lookup(10); //return true if 10 is in the tree, otherwise return false
+```
+Display
+```
+tree.Display(); // print out the indexing tree structure under root node, which means display the whole tree
+tree.Display(10); // print out the indexing tree structure under node 10
+tree.Display(tree.getRoot()); // print out the indexing tree structure under root node, which means display the whole tree
+```
 
-    欢迎到访
-    很高兴见到您
-    祝您，早上好，中午好，下午好，晚安
+##### Display format:
+The display format is like the codes below, it is json format so it could easily visualize in some web json visulizer(like fehelper) in tree format.
+```
+{
+    "node0": {
+        "node0": {
+            "leafnode0": {
+                "datapointer0":1,
+                 "datapointer1":2,
+             }, 
+            "datapointer0":3,
+             "leafnode1": {
+                "datapointer0":4,
+                 "datapointer1":5,
+             }, 
+            "datapointer1":6,
+             "leafnode2": {
+                "datapointer0":10,
+                 "datapointer1":11,
+             }, 
+            "datapointer2":12,
+             "leafnode3": {
+                "datapointer0":13,
+                 "datapointer1":15,
+                 "datapointer2":20,
+                 "datapointer3":22,
+             }, 
+        }, 
+        "datapointer0":30,
+         "node1": {
+            "leafnode0": {
+                "datapointer0":32,
+                 "datapointer1":33,
+             }, 
+            "datapointer0":34,
+             "leafnode1": {
+                "datapointer0":40,
+                 "datapointer1":50,
+             }, 
+            "datapointer1":60,
+             "leafnode2": {
+                "datapointer0":85,
+                 "datapointer1":95,
+                 "datapointer2":100,
+             }, 
+        }, 
+    }, 
+}
+```
+
     
 #### Any Known Bugs
 So far, I did not see any bugs during the test if the input is __correctly(i.e the nodesize 
