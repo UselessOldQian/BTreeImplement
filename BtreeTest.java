@@ -1,4 +1,6 @@
 /*
+ * name: Xingjian Qian
+ * NEU ID: 002192922
  * CS7280 Special Topics in Database Management
  * Project 1: B-tree Test program.
  *
@@ -25,7 +27,7 @@ public final class BtreeTest {
     int cntValues = values.length;
 
     System.out.println("Create B-tree with " + cntValues + " Values...\n");
-    Btree tree = new Btree(7);
+    Btree tree = new Btree(8);
 
     System.out.println("Insert Values...");
     for (int v : values) {
